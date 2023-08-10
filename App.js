@@ -1,3 +1,6 @@
+import React from 'react';
+import { ReactDOM, createRoot } from 'react-dom/client';
+
 //React.createElement is a JS Object
 const heading = React.createElement(
     "div", //Which tag to be created?
@@ -7,9 +10,8 @@ const heading = React.createElement(
     React.createElement("h2", {}, "I'm a h2 tag")])
 );//what to display?
 
-
 //Rendering react
-const root = ReactDOM.createRoot(document.getElementById("root"));
+const root = createRoot(document.getElementById("root"));
 
 /*
 render() => renders a JS object(heading) and 
