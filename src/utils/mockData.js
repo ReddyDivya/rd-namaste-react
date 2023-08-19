@@ -1,37 +1,4 @@
-import React from 'react';
-import { createRoot } from 'react-dom/client';
-/*
-    1. Header
-        - Logo
-        - Nav Items
-    2. Body
-        - Search
-        - Restaurant Card
-    3. Footer
-        - Copyright
-        - Links
-        - Address
-        - Contact
-*/
-
-//1. Header Component
-const Header = () => {
-    return <div className="header">
-        <div>
-            <img className="logo" src="https://img.freepik.com/premium-vector/restaurant-logo-design-template_79169-56.jpg?w=2000"/>
-        </div>
-        <div className="nav-items">
-            <ul>
-                <li>Home</li>
-                <li>About</li>
-                <li>Contact</li>
-                <li>Cart</li>
-            </ul>
-        </div>
-    </div>
-}//Header
-
-const resList = [
+export const resList = [
     {
         id: "1001",
         name : "Santosh Family Dhaba",
@@ -96,44 +63,3 @@ const resList = [
         image: "https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_1024/iwtocxqjtu57vc7l52h9",
     },
 ]
-
-
-//2. Body Component
-const Body = () => {
-    return <div className="body">
-        <div className="res-search">
-            Search
-        </div>
-        <div className="res-container">
-            {
-                resList.map((restaurant) => (
-                    <RestaurantCard key={restaurant.id} resData={restaurant}/>
-                ))
-            }
-        </div>
-    </div>
-}
-
-//3. Restaurant Card
-const RestaurantCard = (props) => {
-    const {resData} = props;
-
-    return (<div className="res-card">
-        <img className="res-logo" src={resData.image}/>
-        <h3>{resData.name}</h3>
-        <h4>{resData.receipe}</h4>
-        <h4>{resData.rating}</h4>
-        <h4>{resData.deliveryTime}</h4>
-        <h4>{resData.price}</h4>
-    </div>);
-}
-
-const AppLayout = () => {
-    return <div className="app">
-        <Header/>
-        <Body/>
-    </div>
-}
-const root = createRoot(document.getElementById("root"));
-
-root.render(<AppLayout/>);
