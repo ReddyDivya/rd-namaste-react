@@ -28,7 +28,7 @@
 /* Header component ends */
 
 /* Restaurant card component starts */
-.res-container{
+.body{
     padding:5px;
     margin:5px;
     border:1px solid #000;
@@ -40,12 +40,12 @@
     margin:5px;
 }
 
-.res-cards{
+.res-container{
     display:flex;
     flex-wrap: wrap;
 }
 
-.res-card-image{
+.res-logo{
     width:100%;
     height:150px;
 }
