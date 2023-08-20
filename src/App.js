@@ -17,9 +17,6 @@ import Body from "./component/Body";
         - Contact
 */
 
-
-
-
 const AppLayout = () => {
     return <div className="app">
         <Header/>
