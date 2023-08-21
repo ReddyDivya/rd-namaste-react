@@ -9,8 +9,11 @@ const Body = () => {
     restaurantList - default value
     */
     const [listOfRestaurants, setListOfRestaurants] = useState(restaurantList);
+    
+    //useEffect(2 params) - callback function, dependencies
+    useEffect(() => {console.log("useEffected called")}, []);
 
-    return <div className="body">
+    return (<div className="body">
         <button className="res-filter" onClick={() => 
             {
                 const filteredList = restaurantList.filter((restaurants) => restaurants.data.avgRating > 4);
@@ -33,6 +36,7 @@ const Body = () => {
             }
         </div>
     </div>
+    )
 }
 
 export default Body;
