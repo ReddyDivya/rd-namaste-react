@@ -1,29 +1,40 @@
 import RestaurantCard from "./RestaurantCard";
-import {restaurantList} from "../utils/mockData";
-import {useState} from "react";
+import {SWIGGY_API_URL} from "../utils/constant";
+import {useState, useEffect} from "react";
+import Shimmer from "./Shimmer";
 
 //2. Body Component
 const Body = () => {
-    /*
-    Local state variable = Super powerful variable
-    restaurantList - default value
-    */
-    const [listOfRestaurants, setListOfRestaurants] = useState(restaurantList);
+    //Local state variable = Super powerful variable
+    const [listOfRestaurants, setListOfRestaurants] = useState([]);
     
     //useEffect(2 params) - callback function, dependencies
-    useEffect(() => {console.log("useEffected called")}, []);
+    useEffect(() => {
+        getRestaurants();
+    }, []);
 
-    return (<div className="body">
+    //get restaurants list
+    const getRestaurants = async () => {
+        //making swiggy api call
+        const data = await fetch(SWIGGY_API_URL);
+        const json = await data.json();
+        // console.log(json);
+        // console.log(json?.data?.cards[1]?.card?.card.imageGridCards?.info);
+        console.log(json?.data?.cards[2]?.data?.data?.cards);
+        // setListOfRestaurants(json?.data?.cards[2]?.data?.data?.cards);
+    };//getRestaurants
+
+    return (listOfRestaurants.length === 0 ? <Shimmer/> : <div className="body">
         <button className="res-filter" onClick={() => 
             {
-                const filteredList = restaurantList.filter((restaurants) => restaurants.data.avgRating > 4);
+                const filteredList = listOfRestaurants.filter((restaurants) => restaurants.data.avgRating > 4);
                 setListOfRestaurants(filteredList);//updating the state
             }}>
             Top Rated Restaurants
         </button>
         <button className="res-filter" onClick={() => 
             {
-                const filteredList = restaurantList.filter((restaurants) => restaurants.data.avgRating < 4);
+                const filteredList = listOfRestaurants.filter((restaurants) => restaurants.data.avgRating < 4);
                 setListOfRestaurants(filteredList);//updating the state
             }}>
             Low Rated Restaurants
