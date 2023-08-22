@@ -7,7 +7,8 @@ import Shimmer from "./Shimmer";
 const Body = () => {
     //Local state variable = Super powerful variable
     const [listOfRestaurants, setListOfRestaurants] = useState([]);
-    
+    const [filteredRestaurants, setFilteredRestaurants] = useState([]);
+
     //useEffect(2 params) - callback function, dependencies
     useEffect(() => {
         getRestaurants();
@@ -18,26 +19,28 @@ const Body = () => {
         //making swiggy api call
         const data = await fetch(SWIGGY_API_URL);
         const json = await data.json();
-        console.log(json?.data?.cards[5]?.card?.card?.gridElements?.infoWithStyle?.restaurants)
+        // console.log(json?.data?.cards[5]?.card?.card?.gridElements?.infoWithStyle?.restaurants)
         setListOfRestaurants(json?.data?.cards[5]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
+        setFilteredRestaurants(json?.data?.cards[5]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
     };//getRestaurants
 
-    return (listOfRestaurants.length === 0 ? <Shimmer/> : <div className="body">
+    return (
+        listOfRestaurants.length === 0 ? <Shimmer/> : (<div className="body">
         <button className="res-filter" onClick={() => 
             {
                 const filteredList = listOfRestaurants.filter((restaurants) => restaurants.info.avgRating > 4);
-                setListOfRestaurants(filteredList);//updating the state
+                setFilteredRestaurants(filteredList);//updating the state
             }}>
             Top Rated Restaurants
         </button>
         <div className="res-container">
             {
-                listOfRestaurants.map((restaurant) => (
+                filteredRestaurants.map((restaurant) => (
                     <RestaurantCard key={restaurant.info.id} resData={restaurant}/>
                 ))
             }
         </div>
-    </div>
+    </div>)
     )
 }
 
