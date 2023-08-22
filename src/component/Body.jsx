@@ -6,8 +6,9 @@ import Shimmer from "./Shimmer";
 //2. Body Component
 const Body = () => {
     //Local state variable = Super powerful variable
-    const [listOfRestaurants, setListOfRestaurants] = useState([]);
-    const [filteredRestaurants, setFilteredRestaurants] = useState([]);
+    const [listOfRestaurants, setListOfRestaurants] = useState([]);//All Restaurants
+    const [filteredRestaurants, setFilteredRestaurants] = useState([]); //Filtered Restaurants
+    const [searchRestaurant, setSearchRestaurant] = useState("");//Search Restaurants
 
     //useEffect(2 params) - callback function, dependencies
     useEffect(() => {
@@ -25,16 +26,48 @@ const Body = () => {
     };//getRestaurants
 
     return listOfRestaurants.length === 0 ? (<Shimmer/>) : ( <div className="body">
-        <button className="res-filter" onClick={() => 
+       <div className="filter">
+            <input type="text" value={searchRestaurant}
+                onChange={(e) => {
+                    setSearchRestaurant(e.target.value);
+                    const filteredRes = listOfRestaurants.filter((res) => 
+                    { 
+                        return res.info.name.toLowerCase().includes(searchRestaurant.toLowerCase())
+                    })
+                    
+                    setFilteredRestaurants(filteredRes);
+                }}
+            />
+            {/* <button className="res-search" onClick={() => 
             {
-                const filteredList = listOfRestaurants.filter((restaurants) => restaurants.info.avgRating > 4);
-                setFilteredRestaurants(filteredList);//updating the state
+                const filteredRes = listOfRestaurants.filter((res) => 
+                { 
+                    return res.info.name.toLowerCase().includes(searchRestaurant.toLowerCase())
+                })
+                
+                setFilteredRestaurants(filteredRes);
             }}>
-            Top Rated Restaurants
-        </button>
+            Search
+            </button> */}
+
+            <button className="res-filter" onClick={() => 
+                {
+                    const filteredList = listOfRestaurants.filter((restaurants) => restaurants.info.avgRating > 4);
+                    setFilteredRestaurants(filteredList);//updating the state
+                }}>
+                Top Rated Restaurants
+            </button>
+       </div>
         <div className="res-container">
             {
+                (searchRestaurant.length > 0) ?
+                //showing only filtered restaurants
                 filteredRestaurants.map((restaurant) => (
+                    <RestaurantCard key={restaurant.info.id} resData={restaurant}/>
+                ))
+                : 
+                //showing all the restaurants
+                listOfRestaurants.map((restaurant) => (
                     <RestaurantCard key={restaurant.info.id} resData={restaurant}/>
                 ))
             }
