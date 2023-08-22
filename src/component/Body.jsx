@@ -18,31 +18,22 @@ const Body = () => {
         //making swiggy api call
         const data = await fetch(SWIGGY_API_URL);
         const json = await data.json();
-        // console.log(json);
-        // console.log(json?.data?.cards[1]?.card?.card.imageGridCards?.info);
-        console.log(json?.data?.cards[2]?.data?.data?.cards);
-        // setListOfRestaurants(json?.data?.cards[2]?.data?.data?.cards);
+        console.log(json?.data?.cards[5]?.card?.card?.gridElements?.infoWithStyle?.restaurants)
+        setListOfRestaurants(json?.data?.cards[5]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
     };//getRestaurants
 
     return (listOfRestaurants.length === 0 ? <Shimmer/> : <div className="body">
         <button className="res-filter" onClick={() => 
             {
-                const filteredList = listOfRestaurants.filter((restaurants) => restaurants.data.avgRating > 4);
+                const filteredList = listOfRestaurants.filter((restaurants) => restaurants.info.avgRating > 4);
                 setListOfRestaurants(filteredList);//updating the state
             }}>
             Top Rated Restaurants
         </button>
-        <button className="res-filter" onClick={() => 
-            {
-                const filteredList = listOfRestaurants.filter((restaurants) => restaurants.data.avgRating < 4);
-                setListOfRestaurants(filteredList);//updating the state
-            }}>
-            Low Rated Restaurants
-        </button>
         <div className="res-container">
             {
                 listOfRestaurants.map((restaurant) => (
-                    <RestaurantCard key={restaurant.data.id} resData={restaurant}/>
+                    <RestaurantCard key={restaurant.info.id} resData={restaurant}/>
                 ))
             }
         </div>
