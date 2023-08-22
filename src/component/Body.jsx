@@ -24,8 +24,7 @@ const Body = () => {
         setFilteredRestaurants(json?.data?.cards[5]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
     };//getRestaurants
 
-    return (
-        listOfRestaurants.length === 0 ? <Shimmer/> : (<div className="body">
+    return listOfRestaurants.length === 0 ? (<Shimmer/>) : ( <div className="body">
         <button className="res-filter" onClick={() => 
             {
                 const filteredList = listOfRestaurants.filter((restaurants) => restaurants.info.avgRating > 4);
@@ -40,7 +39,7 @@ const Body = () => {
                 ))
             }
         </div>
-    </div>)
+    </div>
     )
 }
 
