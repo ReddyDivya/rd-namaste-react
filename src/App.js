@@ -5,7 +5,7 @@ import Body from "./components/Body";
 import About from "./components/About";
 import Error from "./components/Error";
 import Contacts from "./components/Contacts";
-import { createBrowserRouter, RouterProvider } from 'react-router-dom';
+import { createBrowserRouter, RouterProvider, Outlet } from 'react-router-dom';
 
 /*
     1. Header
@@ -24,7 +24,7 @@ import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 const AppLayout = () => {
     return <div className="app">
         <Header/>
-        <Body/>
+        <Outlet/>
     </div>
 }
 
@@ -34,20 +34,25 @@ const appRouter = createBrowserRouter([
         path: "/",
         element : <AppLayout/>,
         errorElement: <Error/>,//shows error page
+        children: 
+        [
+            {
+                path: "/",
+                element: <Body/>,
+            },
+            {
+                path: "/about",
+                element: <About/>,
+            },
+            {
+                path: "/contacts",
+                element: <Contacts/>,
+            }
+        ]
     },
-    {
-        path: "/about",
-        element: <About/>,
-    },
-    {
-        path: "/contacts",
-        element: <Contacts/>,
-    },
+    
 ])
 const root = createRoot(document.getElementById("root"));
 
 //Providing router configuration(appRouter) to the AppLayout
-root.render(
-<RouterProvider router={appRouter}>
-    <AppLayout/>
-</RouterProvider>);
+root.render(<RouterProvider router={appRouter}/>);
