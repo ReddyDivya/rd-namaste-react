@@ -32,7 +32,6 @@ const RestaurantMenu = () => {
         // console.log('menu >>> ', jsonMenuData);
         // console.log('Data >>> ', jsonMenuData.data.cards[2].groupedCard.cardGroupMap.REGULAR.cards);
         // console.log('Data >>> ', jsonMenuData.data.cards[2].groupedCard.cardGroupMap.REGULAR.cards[3].card.card.itemCards[0].card.info.name);
-
     }
 
     if(restaurant === null) return <Shimmer/>;
@@ -40,10 +39,22 @@ const RestaurantMenu = () => {
     //destructuring the restaurant info
     const {name, cuisines, costForTwoMessage} = restaurant?.cards[0]?.card?.card?.info;
 
+    //menu
+    const {itemCards} = restaurant?.cards[2]?.groupedCard?.cardGroupMap?.REGULAR?.cards[3]?.card?.card;
+
     return ( 
     <div>
         <h1>{name}</h1>
         <h2>{cuisines.join(", ")} - {costForTwoMessage}</h2>
+        <ul>
+        {
+            itemCards.map((item) => (
+                <li key={item.card.info.id}>
+                    {item.card.info.name} - {"Rs."} {item.card.info.price/100 || item.card.info.defaultPrice/100}
+                </li>
+            ))
+        }
+        </ul>
     </div>)
 
 }
