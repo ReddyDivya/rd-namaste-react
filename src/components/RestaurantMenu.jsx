@@ -6,7 +6,6 @@ import Shimmer from "./Shimmer";
 const RestaurantMenu = () => {
     const {resId} = useParams();//call useParam to get value of restaurant Id(resId) using object destructuring.
     const [restaurant, setRestaurant] = useState(null);//holds a restaurant details
-    const [menuItems, setMenuItems] = useState(null);//A resturant's menu items.
 
     //calls only once after the initial component render
     useEffect(() => {
@@ -20,41 +19,52 @@ const RestaurantMenu = () => {
         
         //set restaurant
         setRestaurant(jsonResData.data);
-
-        // const restaurantData = jsonResData?.data?.cards[2]?.groupedCard?.cardGroupMap?.REGULAR?.cards;
-        
-        
-        
-        // Set menu item data
-        // const menuItemsData = jsonMenuData?.data?.cards[2]?.groupedCard?.cardGroupMap?.REGULAR?.cards.map(item => item.card.card.itemCards[0].card.info.name);
-        // console.log('menuItemsData >> '+ menuItemsData);
-        
-        // console.log('menu >>> ', jsonMenuData);
-        // console.log('Data >>> ', jsonMenuData.data.cards[2].groupedCard.cardGroupMap.REGULAR.cards);
-        // console.log('Data >>> ', jsonMenuData.data.cards[2].groupedCard.cardGroupMap.REGULAR.cards[3].card.card.itemCards[0].card.info.name);
     }
 
     if(restaurant === null) return <Shimmer/>;
 
     //destructuring the restaurant info
-    const {name, cuisines, costForTwoMessage} = restaurant?.cards[0]?.card?.card?.info;
+    const {name, cuisines, costForTwoMessage, locality, avgRating, totalRatingsString
+    } = restaurant?.cards[0]?.card?.card?.info;
+    const {deliveryTime} = restaurant?.cards[0]?.card?.card?.info.sla;
+    
+    console.log(restaurant?.cards[0]?.card?.card?.info)
 
     //menu
     const {itemCards} = restaurant?.cards[2]?.groupedCard?.cardGroupMap?.REGULAR?.cards[3]?.card?.card;
 
     return ( 
-    <div>
-        <h1>{name}</h1>
-        <h2>{cuisines.join(", ")} - {costForTwoMessage}</h2>
-        <ul>
-        {
-            itemCards.map((item) => (
-                <li key={item.card.info.id}>
-                    {item.card.info.name} - {"Rs."} {item.card.info.price/100 || item.card.info.defaultPrice/100}
-                </li>
-            ))
-        }
-        </ul>
+    <div className="res-details">
+        <section>
+            <div className="res-header">
+                <h1>{name}</h1>
+                <p>{cuisines.join(", ")} </p>
+                <p>{locality}</p>
+            </div>
+            <div className="res-rating">
+                <h2>{avgRating}⭐</h2>
+                <h2>{totalRatingsString}</h2>
+            </div>
+        </section>
+
+        <section>
+            <h3>{deliveryTime}</h3>
+            <h3>{costForTwoMessage}</h3>
+        </section>
+        
+        <section>
+            <h2>Recommended ({itemCards.length})</h2>
+            <ul>
+            {
+                itemCards.map((item) => (
+                    <li key={item.card.info.id}>
+                        {item.card.info.name}
+                        <p>{" Rs."} {item.card.info.price/100 || item.card.info.defaultPrice/100}</p>
+                    </li>
+                ))
+            }
+            </ul>
+        </section>
     </div>)
 
 }

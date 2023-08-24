@@ -35,7 +35,6 @@ const appRouter = createBrowserRouter([
     {
         path: "/",
         element : <AppLayout/>,
-        errorElement: <Error/>,//shows error page
         children: 
         [
             {
@@ -54,7 +53,8 @@ const appRouter = createBrowserRouter([
                 path: "/restaurant/:resId", //: - used for dynamic routing (resId is a param which differentiates the restaurants)
                 element: <RestaurantMenu/>
             },
-        ]
+        ],
+        errorElement: <Error/>,//shows error page
     },
     
 ])
