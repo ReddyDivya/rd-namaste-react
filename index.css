@@ -80,3 +80,36 @@
     height:30px;
     cursor: pointer;
 }
+
+/* Restaurant Menu starts here*/
+
+.res-header{
+    display:flex;
+}
+
+.res-rating{
+    position: absolute;
+    right:0;
+    margin:8px;
+    padding:0px;
+    height:20%;
+    color:green;
+    border: 1px solid #686161;
+    border-radius: 5px;
+}
+
+.res-rating > h4{
+    color: #686161;
+}
+
+.res-deliveryInfo{
+    display: flex;
+}
+
+.res-deliveryInfo > h3{
+    margin:5px;
+}
+
+.res-recomends > ul{
+    list-style-type: none;
+}

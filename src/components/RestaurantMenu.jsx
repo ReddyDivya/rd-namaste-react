@@ -32,33 +32,34 @@ const RestaurantMenu = () => {
 
     //menu
     const {itemCards} = restaurant?.cards[2]?.groupedCard?.cardGroupMap?.REGULAR?.cards[3]?.card?.card;
-
+    // console.log(itemCards);
     return ( 
     <div className="res-details">
-        <section>
-            <div className="res-header">
+        <section className="res-header">
+            <div>
                 <h1>{name}</h1>
                 <p>{cuisines.join(", ")} </p>
                 <p>{locality}</p>
             </div>
             <div className="res-rating">
-                <h2>{avgRating}⭐</h2>
-                <h2>{totalRatingsString}</h2>
+                <h2>⭐{avgRating}</h2>
+                <hr/>
+                <h4>{totalRatingsString}</h4>
             </div>
         </section>
-
-        <section>
-            <h3>{deliveryTime}</h3>
-            <h3>{costForTwoMessage}</h3>
+        <hr/>
+        <section className="res-deliveryInfo">
+            <h3>🕗{deliveryTime}</h3>
+            <p>💵{costForTwoMessage}</p>
         </section>
-        
-        <section>
+        <hr/>
+        <section className="res-recomends">
             <h2>Recommended ({itemCards.length})</h2>
             <ul>
             {
                 itemCards.map((item) => (
                     <li key={item.card.info.id}>
-                        {item.card.info.name}
+                        <h3>{item.card.info.name}</h3>
                         <p>{" Rs."} {item.card.info.price/100 || item.card.info.defaultPrice/100}</p>
                     </li>
                 ))
