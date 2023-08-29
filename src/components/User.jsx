@@ -3,6 +3,7 @@ import React from 'react';
 class User extends React.Component{
     constructor(props){
         super(props);
+        console.log(`${this.props.child} Child's constructors`);
 
         //state variables
         this.state = {
@@ -11,7 +12,13 @@ class User extends React.Component{
         }
     }
 
+    componentDidMount(){
+        console.log(`${this.props.child} Child's did mount.`);
+    }
+
     render(){
+        console.log(`${this.props.child} Child's render`);
+
         return ( 
             <div>
                 <h2>{this.props.name}</h2>
@@ -21,7 +28,7 @@ class User extends React.Component{
                 <button onClick={() => {
                     this.setState({ 
                         count1 : this.state.count1 + 1,
-                        count2 : this.state.count2 + 2,
+                        // count2 : this.state.count2 + 2,
                     });
                 }}>
                     Click</button>
