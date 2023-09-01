@@ -3,6 +3,7 @@ import {SWIGGY_API_URL} from "../utils/constant";
 import {useState, useEffect} from "react";
 import Shimmer from "./Shimmer";
 import {Link} from "react-router-dom";
+import useOnlineStatus from "../utils/useOnlineStatus";
 
 //2. Body Component
 const Body = () => {
@@ -10,6 +11,7 @@ const Body = () => {
     const [listOfRestaurants, setListOfRestaurants] = useState([]);//All Restaurants
     const [filteredRestaurants, setFilteredRestaurants] = useState([]); //Filtered Restaurants
     const [searchRestaurant, setSearchRestaurant] = useState("");//Search Restaurants
+    const onlineStatus = useOnlineStatus();//fetching online status through custom hook.
 
     //useEffect(2 params) - callback function, dependencies
     useEffect(() => {
@@ -25,6 +27,10 @@ const Body = () => {
         setListOfRestaurants(json?.data?.cards[5]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
         setFilteredRestaurants(json?.data?.cards[5]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
     };//getRestaurants
+
+    //check if there's internet or not & show message.
+    if(onlineStatus === false)
+        return <h1>Looks your offline. Check your internet connection.</h1>
 
     if(listOfRestaurants.length === 0)
         return <Shimmer/>
