@@ -10,9 +10,12 @@ const Header = () => {
 
     return <div className="header">
         <div>
-            <img className="logo" src={LOGO_URL}/>
+            {/* <img src={LOGO_URL}/> */}
         </div>
         <div className="nav-items">
+        <h1 className="text-3xl font-bold underline">
+            Hello world!
+        </h1>
             <ul>
                 <li>
                     {onlineStatus === true ? "🟢" : "🔴" }
@@ -29,7 +32,7 @@ const Header = () => {
                 <li>
                     <Link to="/contacts">Contacts</Link>
                 </li>
-                <li>Cart</li>
+                <li className="bg-indigo-900">Cart</li>
                 <button className="login-btn" onClick={() => btnName == "Login" ? setBtnName("Logout") : setBtnName("Login")}>{btnName}</button>
             </ul>
         </div>
