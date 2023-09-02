@@ -23,9 +23,9 @@ class About extends React.Component{
         return( 
             <div className="about">
                 <h2>About us</h2>
-                {/* <User child={"First"}/> */}
+                <User child={"First"}/>
                 {/* <User child={"Second"}/> */}
-                <UserClass/>
+                {/* <UserClass/> */}
                </div>
             )
     }//render
