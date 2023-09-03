@@ -20,9 +20,10 @@ const Body = () => {
     if(listOfRestaurants.length === 0)
         return <Shimmer/>
 
-    return ( <div className="body">
-       <div className="filter">
-            <input type="text" value={searchRestaurant}
+    return ( 
+    <section className="flex">
+        <section className="">
+            <input className="border-solid" type="text" value={searchRestaurant}
                 onChange={(e) => {
                     setSearchRestaurant(e.target.value);
                     const filteredRes = listOfRestaurants.filter((res) => 
@@ -39,8 +40,8 @@ const Body = () => {
                 }}>
                 Top Rated Restaurants
             </button>
-       </div>
-        <div className="res-container">
+        </section>
+        <section className="flex flex-wrap">
             {
                 (searchRestaurant.length > 0) ?
                 //showing only filtered restaurants
@@ -56,8 +57,8 @@ const Body = () => {
                     </Link>
                 ))
             }
-        </div>
-    </div>
+        </section>
+    </section>
     )
 }
 
