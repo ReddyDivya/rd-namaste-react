@@ -21,9 +21,9 @@ const Body = () => {
         return <Shimmer/>
 
     return ( 
-    <section className="flex">
+    <>
         <section className="">
-            <input className="border-solid" type="text" value={searchRestaurant}
+            <input className="border-2 border-slate-400 m-4 p-1" type="text" value={searchRestaurant}
                 onChange={(e) => {
                     setSearchRestaurant(e.target.value);
                     const filteredRes = listOfRestaurants.filter((res) => 
@@ -33,7 +33,7 @@ const Body = () => {
                     setFilteredRestaurants(filteredRes);
                 }}
             />
-            <button className="res-filter" onClick={() => 
+            <button className="bg-sky-800 text-slate-200 p-2 rounded hover:bg-sky-950" onClick={() => 
                 {
                     const filteredList = listOfRestaurants.filter((restaurants) => restaurants.info.avgRating > 4);
                     setFilteredRestaurants(filteredList);//updating the state
@@ -58,7 +58,7 @@ const Body = () => {
                 ))
             }
         </section>
-    </section>
+    </>
     )
 }
 

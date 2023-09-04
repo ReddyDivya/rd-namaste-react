@@ -10,7 +10,7 @@ const Header = () => {
     const onlineStatus = useOnlineStatus();
 
     return (
-    <nav className="flex flex-wrap mx-auto items-center justify-between p-6 lg:px-8 text-slate-300 bg-green-900">
+    <nav className="flex flex-wrap mx-auto items-center justify-between p-6 lg:px-8 text-slate-300 bg-sky-800">
         <div>
             <img className="w-[100px]" src={LOGO_URL}/>
         </div>
