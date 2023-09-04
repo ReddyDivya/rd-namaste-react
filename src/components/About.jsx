@@ -21,12 +21,10 @@ class About extends React.Component{
         console.log("2. Parent's render.");
 
         return( 
-            <div className="about">
-                <h2>About us</h2>
-                <User child={"First"}/>
-                {/* <User child={"Second"}/> */}
-                {/* <UserClass/> */}
-               </div>
+            <>
+                <h2 className="font-bold text-slate-700 m-4">ABOUT US</h2>
+                <User/>
+            </>
             )
     }//render
 }
