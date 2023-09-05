@@ -15,4 +15,19 @@ const RestaurantCard = (props) => {
     </div>);
 }
 
+//RestaurantCard is an input component
+export const withPromotedLabel = (RestaurantCard) => {
+    
+    //This returns RestaurantCardPromoted component where it receives props sent from Body.js
+    //{...props} => passing extra components to RestaurantCard
+    return (props) => {
+        //returning another component(RestaurantCardPromoted) which can be accessed by withPromotedLabel()
+        return ( <div>
+            <label className="absolute w-30 bg-black text-slate-200 m-3 ml-8 mt-4 p-1 rounded-md">
+                Promoted
+            </label>
+            <RestaurantCard {...props}/>
+    </div> )
+    }
+}
 export default RestaurantCard;

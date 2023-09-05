@@ -1,4 +1,4 @@
-import RestaurantCard from "./RestaurantCard";
+import RestaurantCard, {withPromotedLabel} from "./RestaurantCard";
 import {useState, useEffect} from "react";
 import Shimmer from "./Shimmer";
 import {Link} from "react-router-dom";
@@ -12,6 +12,7 @@ const Body = () => {
     const [searchRestaurant, setSearchRestaurant] = useState("");//Search Restaurants
     const onlineStatus = useOnlineStatus();//fetching online status through custom hook.
     const listOfRestaurants = useRestaurantList();//fetching restaurants list through custom hook.
+    const RestaurantCardPromoted = withPromotedLabel(RestaurantCard);//Higher Order Component
 
     //check if there's internet or not & show message.
     if(onlineStatus === false)
@@ -53,6 +54,9 @@ const Body = () => {
                 listOfRestaurants.map((restaurant) => (
                     <Link to={"/restaurant/" + restaurant.info.id} 
                         key={restaurant.info.id}>
+
+                        restaurant.info.promoted ?
+                        <RestaurantCardPromoted resData={restaurant}/> :
                         <RestaurantCard key={restaurant.info.id} resData={restaurant}/>
                     </Link>
                 ))
