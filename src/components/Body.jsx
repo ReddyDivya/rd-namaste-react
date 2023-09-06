@@ -55,9 +55,11 @@ const Body = () => {
                     <Link to={"/restaurant/" + restaurant.info.id} 
                         key={restaurant.info.id}>
 
-                        restaurant.info.promoted ?
-                        <RestaurantCardPromoted resData={restaurant}/> :
-                        <RestaurantCard key={restaurant.info.id} resData={restaurant}/>
+                        { 
+                            restaurant.info.promoted ?
+                            <RestaurantCardPromoted resData={restaurant}/> :
+                            <RestaurantCard key={restaurant.info.id} resData={restaurant}/>
+                        }
                     </Link>
                 ))
             }

@@ -1,9 +1,11 @@
+import {useState} from 'react';
 import { useParams } from "react-router-dom";
 import Shimmer from "./Shimmer";
 import useRestaurantMenu from "../utils/useRestaurantMenu";
 import RestaurantCategory from "./RestaurantCategory";
 
 const RestaurantMenu = () => {
+    const [showIndex, setShowIndex] = useState(0);//for expanding accordian
     const {resId} = useParams();//call useParam to get value of restaurant Id(resId) using object destructuring.
     
     //fetching restaurant info from custom hook (useRestaurantMenu)
@@ -46,10 +48,21 @@ const RestaurantMenu = () => {
             {/* Categories accordian */}
             {
                 categories.map((category, index) => (
+                    
                     //controlled components
                     <RestaurantCategory 
                         key={category?.card?.card.title}
                         data={category?.card.card}
+
+                        //expand the items only when we clicked, other accordians should be hided.
+                        showItems={ index === showIndex ? true : false} 
+
+                        /*
+                        Lifting state up
+                        -----------------
+                        passing the function to set the index value in child component.
+                        */
+                        setShowIndex={() => setShowIndex(index)}
                     />
                 ))
             }
