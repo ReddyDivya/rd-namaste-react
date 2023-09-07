@@ -7,7 +7,7 @@ import RestaurantCategory from "./RestaurantCategory";
 const RestaurantMenu = () => {
     const [showIndex, setShowIndex] = useState(0);//for expanding accordian
     const {resId} = useParams();//call useParam to get value of restaurant Id(resId) using object destructuring.
-    
+
     //fetching restaurant info from custom hook (useRestaurantMenu)
     const resMenu = useRestaurantMenu(resId);
 
@@ -48,8 +48,13 @@ const RestaurantMenu = () => {
             {/* Categories accordian */}
             {
                 categories.map((category, index) => (
-                    
-                    //controlled components
+                    /*
+                    Controlled Component
+                    --------------------
+                    RestaurantCategory(Child component) is a controlled component, 
+                    it will expand the accordian only when it's clicked, 
+                    rest accordians are collapsed based upon RestaurantMenu which is a parent component.
+                    */
                     <RestaurantCategory 
                         key={category?.card?.card.title}
                         data={category?.card.card}

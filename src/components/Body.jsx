@@ -1,9 +1,10 @@
 import RestaurantCard, {withPromotedLabel} from "./RestaurantCard";
-import {useState, useEffect} from "react";
+import {useState, useContext} from "react";
 import Shimmer from "./Shimmer";
 import {Link} from "react-router-dom";
 import useOnlineStatus from "../utils/useOnlineStatus";
 import useRestaurantList from "../utils/useRestaurantList";
+import UserContext from '../utils/UserContext';
 
 //2. Body Component
 const Body = () => {
@@ -13,6 +14,9 @@ const Body = () => {
     const onlineStatus = useOnlineStatus();//fetching online status through custom hook.
     const listOfRestaurants = useRestaurantList();//fetching restaurants list through custom hook.
     const RestaurantCardPromoted = withPromotedLabel(RestaurantCard);//Higher Order Component
+
+    //fetching data from context
+    const {loggedInUser, setUserName} = useContext(UserContext);
 
     //check if there's internet or not & show message.
     if(onlineStatus === false)
@@ -41,7 +45,15 @@ const Body = () => {
                 }}>
                 Top Rated Restaurants
             </button>
+            <label className="font-bold mx-4">UserName :</label>
+            <input className="border-2 border-slate-400 m-4 p-1" type="text" 
+                value={loggedInUser}
+                onChange={(e) => {
+                    setUserName(e.target.value);
+                }}
+            />
         </section>
+       
         <section className="flex flex-wrap">
             {
                 (searchRestaurant.length > 0) ?
@@ -54,7 +66,6 @@ const Body = () => {
                 listOfRestaurants.map((restaurant) => (
                     <Link to={"/restaurant/" + restaurant.info.id} 
                         key={restaurant.info.id}>
-
                         { 
                             restaurant.info.promoted ?
                             <RestaurantCardPromoted resData={restaurant}/> :

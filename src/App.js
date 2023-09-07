@@ -1,4 +1,4 @@
-import React, {lazy, Suspense} from 'react';
+import React, {lazy, Suspense, useContext, useEffect, useState} from 'react';
 import { createRoot } from 'react-dom/client';
 import Header from "./components/Header";
 import Body from "./components/Body";
@@ -8,22 +8,38 @@ import Contacts from "./components/Contacts";
 import Loading from './components/Loading';
 import RestaurantMenu from "./components/RestaurantMenu";
 import { createBrowserRouter, RouterProvider, Outlet } from 'react-router-dom';
+import UserContext from "./utils/UserContext";
 
-//on demand lazy loading while clicking on Grocery for making it as a small bundler, check it in dist folder
-const Grocery = lazy(() => import("./components/Grocery"));
-
-const AppLayout = () => {
-    /*
+/*
     lazy loading (or) code splitting (or) chunking (or)
     dynamic bundling (or) on demand loading (or)
-    
+
     lazy lets you defer loading component’s code until it is rendered for the first time.
     dynamic import with the path
-    */
-    return <div className="app">
-        <Header/>
-        <Outlet/>
-    </div>
+
+    on demand lazy loading while clicking on Grocery for making it as a small bundler, check it in dist folder
+*/
+const Grocery = lazy(() => import("./components/Grocery"));
+const About = lazy(() => import("./components/About"));
+
+const AppLayout = () => {
+    const [userName, setUserName] = useState();
+
+    useEffect(() => {
+        //make an api call and send username & password
+        const data = {
+            name : "Reddy Divya",
+        };
+
+        setUserName(data.name);
+    }, []);
+
+    return <div>
+            <UserContext.Provider value={{loggedInUser: userName, setUserName}}>
+                <Header/>
+                <Outlet/>
+            </UserContext.Provider>
+        </div>
 }
 
 //Router Configuration
@@ -39,7 +55,9 @@ const appRouter = createBrowserRouter([
             },
             {
                 path: "/about",
-                element: <About/>,
+                element: <Suspense fallback={<Loading/>}>
+                    <About/>
+                </Suspense>,
             },
             {
                 path: "/grocery",
