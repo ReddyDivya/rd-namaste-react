@@ -3,6 +3,7 @@ import {LOGO_URL} from "../utils/constant";
 import { Link } from "react-router-dom";
 import useOnlineStatus from "../utils/useOnlineStatus";
 import UserContext from "../utils/UserContext";
+import {useSelector} from 'react-redux';
 
 //1. Header Component
 const Header = () => {
@@ -11,6 +12,10 @@ const Header = () => {
 
     //fetching data from context
     const {loggedInUser} = useContext(UserContext);
+
+    //fetch cart items count
+    const cartItems = useSelector((store) => store.cart.items)
+    console.log(cartItems.length);
 
     return (
     <nav className="flex flex-wrap mx-auto items-center justify-between p-6 lg:px-8 text-slate-300 bg-sky-800">
@@ -34,7 +39,7 @@ const Header = () => {
                 <li className="p-2">
                     <Link to="/contacts">Contacts</Link>
                 </li>
-                <li className="p-2">Cart</li>
+                <li className="p-2 font-bold">Cart {cartItems.length}</li>
                 <button className="login-btn" onClick={() => btnName == "Login" ? setBtnName("Logout") : setBtnName("Login")}>{btnName}</button>
                 <li className="p-2 font-bold">{loggedInUser}</li>
             </ul>

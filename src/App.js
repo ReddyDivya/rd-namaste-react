@@ -9,6 +9,8 @@ import Loading from './components/Loading';
 import RestaurantMenu from "./components/RestaurantMenu";
 import { createBrowserRouter, RouterProvider, Outlet } from 'react-router-dom';
 import UserContext from "./utils/UserContext";
+import {Provider} from "react-redux";
+import appStore from './utils/redux/appStore';
 
 /*
     lazy loading (or) code splitting (or) chunking (or)
@@ -34,12 +36,12 @@ const AppLayout = () => {
         setUserName(data.name);
     }, []);
 
-    return <div>
+    return <Provider store={appStore}>
             <UserContext.Provider value={{loggedInUser: userName, setUserName}}>
                 <Header/>
                 <Outlet/>
             </UserContext.Provider>
-        </div>
+        </Provider>
 }
 
 //Router Configuration
