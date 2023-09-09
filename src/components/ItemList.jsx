@@ -1,5 +1,5 @@
 import React from 'react';
-import {useDispatch} from "react-redux";
+import {useDispatch, useSelector} from "react-redux";
 import {addItems} from "../utils/redux/cartSlice";
 import { CDN_URL } from '../utils/constant';
 
@@ -39,10 +39,23 @@ const ItemList = ({items}) => {
                     >
                         ADD
                     </button>
+                    {/* {
+                        count === 0 
+                        ?  <button className="p-2 mx-32 my-18 w-20 rounded bg-white font-bold text-green-600 shadow-lg"
+                                onClick={() => handleAddItem(item)}
+                            >
+                                ADD
+                            </button>
+                        :   <button className="p-2 mx-32 my-18 w-20 rounded bg-white font-bold text-green-600 shadow-lg"
+                                onClick={() => handleAddItem(item)}
+                            >
+                                <span className="p-1">-</span> {cartItemsCount} <span className="p-1">+</span>
+                            </button>
+                    } */}
                 </div>
                 {item.card.info.imageId && <img src={CDN_URL + item.card.info.imageId} className="w-full"/>}
-            </div>    
-        </div>      
+            </div>
+        </div>
         ))}
     </div>
   )
