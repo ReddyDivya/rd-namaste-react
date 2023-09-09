@@ -4,7 +4,6 @@ import { useSelector, useDispatch } from "react-redux";
 import {clearCart} from "../utils/redux/cartSlice";
 import {Link} from "react-router-dom";
 import receipe from "../components/assets/receipe.jpg";
-import { useState } from "react";
 
 const Cart = () => {
     const cartItems = useSelector((store) => store.cart.items);
