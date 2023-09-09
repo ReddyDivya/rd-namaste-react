@@ -18,7 +18,7 @@ const Header = () => {
     console.log(cartItems.length);
 
     return (
-    <nav className="flex flex-wrap mx-auto items-center justify-between p-6 lg:px-8 text-slate-300 bg-sky-800">
+    <nav className="flex flex-wrap mx-auto items-center justify-between p-6 lg:px-8 text-white bg-teal-700">
         <div>
             <img className="w-[100px]" src={LOGO_URL}/>
         </div>
@@ -39,7 +39,9 @@ const Header = () => {
                 <li className="p-2">
                     <Link to="/contacts">Contacts</Link>
                 </li>
-                <li className="p-2 font-bold">Cart {cartItems.length}</li>
+                <li className="p-2 font-bold">
+                    <Link to="/cart">Cart : {cartItems.length}</Link>
+                </li>
                 <button className="login-btn" onClick={() => btnName == "Login" ? setBtnName("Logout") : setBtnName("Login")}>{btnName}</button>
                 <li className="p-2 font-bold">{loggedInUser}</li>
             </ul>

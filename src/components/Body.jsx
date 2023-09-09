@@ -38,7 +38,7 @@ const Body = () => {
                     setFilteredRestaurants(filteredRes);
                 }}
             />
-            <button className="bg-sky-800 text-slate-200 p-2 rounded hover:bg-sky-950" onClick={() => 
+            <button className="bg-teal-700 text-slate-200 p-2 rounded hover:bg-sky-950" onClick={() => 
                 {
                     const filteredList = listOfRestaurants.filter((restaurants) => restaurants.info.avgRating > 4);
                     setFilteredRestaurants(filteredList);//updating the state
