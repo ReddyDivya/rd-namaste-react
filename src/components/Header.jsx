@@ -15,7 +15,6 @@ const Header = () => {
 
     //fetch cart items count
     const cartItems = useSelector((store) => store.cart.items)
-    console.log(cartItems.length);
 
     return (
     <nav className="flex flex-wrap mx-auto items-center justify-between p-6 lg:px-8 text-white bg-teal-700">

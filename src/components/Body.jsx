@@ -27,7 +27,7 @@ const Body = () => {
 
     return ( 
     <>
-        <section className="">
+        <section>
             <input className="border-2 border-slate-400 m-4 p-1" type="text" value={searchRestaurant}
                 onChange={(e) => {
                     setSearchRestaurant(e.target.value);
