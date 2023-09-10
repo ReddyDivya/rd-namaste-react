@@ -27,11 +27,33 @@ test("Should load button inside the Contact component", () => {
 });
 
 //Test case:3 => whether there's placeholder named "Name"
-test("Should load button inside the Contact component", () => {
+test("Should load placeholder named 'Name' inside the Contact component", () => {
     render(<Contacts/>);
 
-    const placeholder = screen.getByPlaceholderText("Name");
+    const placeholderName = screen.getByPlaceholderText("Name");
 
     //Assertion
-    expect(placeholder).toBeInTheDocument();
+    expect(placeholderName).toBeInTheDocument();
+});
+
+//Test case:4 => whether there's placeholder named "Message"
+test("Should load placeholder named 'Message' inside the Contact component", () => {
+    render(<Contacts/>);
+
+    const placeholderMsg = screen.getByPlaceholderText("Message");
+
+    //Assertion
+    expect(placeholderMsg).toBeInTheDocument();
+});
+
+//Test case:5 => whether there's an input field or not
+test("Should load 2 input fields inside the Contact component", () => {
+    render(<Contacts/>);
+
+    //Querying
+    const inputBoxes = screen.getAllByRole("textbox");
+
+    //Assertion
+    expect(inputBoxes.length).toBe(2);
+    expect(inputBoxes.length).not.toBe(3);//not expecting it to be 3
 });
