@@ -1,4 +1,4 @@
-import RestaurantCard from "../RestaurantCard";
+import RestaurantCard, {withPromotedLabel}  from "../RestaurantCard";
 import MOCK_DATA from "../mocks/resCardMockData.json"; 
 import {render, screen} from "@testing-library/react";
 import "@testing-library/jest-dom";
@@ -13,13 +13,14 @@ it("Should render RestaurantCard component with props Data", () => {
     expect(resName).toBeInTheDocument();
 });
 
-// it("Should render RestaurantCard component with Promoted Label", () => {
-//     //Higher Order Component
-//     const RestaurantCardPromoted = withPromotedLabel(RestaurantCard);
+it("Should render RestaurantCard component with Promoted Label", () => {
+    const RestaurantCardPromoted = withPromotedLabel(RestaurantCard);//Higher Order Component
+    
+    //render the Higher Order Component
+    render(<RestaurantCardPromoted resData={MOCK_DATA}/>);
 
-//     //render the component
-//     const { container } = render(<RestaurantCardPromoted/>)
+    //checking with mockData restaurant name
+    const resName = screen.getByText("Domino's Pizza");
 
-//     //Assert that the container is not rendered
-//     expect(container).toBeEmptyDOMElement();
-// });
+    expect(resName).toBeInTheDocument();
+});
