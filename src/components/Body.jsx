@@ -28,22 +28,41 @@ const Body = () => {
     return ( 
     <>
         <section>
-            <input className="border-2 border-slate-400 m-4 p-1" type="text" value={searchRestaurant}
+            {/* <input data-testid="searchInput" className="border-2 border-slate-400 m-4 p-1" type="text" value={searchRestaurant}
                 onChange={(e) => {
                     setSearchRestaurant(e.target.value);
-                    const filteredRes = listOfRestaurants.filter((res) => 
-                    { 
-                        return res.info.name.toLowerCase().includes(searchRestaurant.toLowerCase())
-                    })
-                    setFilteredRestaurants(filteredRes);
+                }}
+            /> */}
+
+            <input
+                type="text"
+                data-testid="searchInput"
+                className="border border-solid border-black"
+                value={searchRestaurant}
+                onChange={(e) => {
+                    setSearchRestaurant(e.target.value);
                 }}
             />
+            <button
+                className="px-4 py-2 bg-green-100 m-4 rounded-lg"
+                onClick={() => {
+                    // Filter the restraunt cards and update the UI
+                    const filteredRestaurant = listOfRestaurants.filter((res) =>
+                        res.info.name.toLowerCase().includes(searchRestaurant.toLowerCase())
+                    );
+
+                    setFilteredRestaurants(filteredRestaurant);
+                }}
+            >
+                Search
+           </button>
             <button className="bg-teal-700 text-slate-200 p-2 rounded hover:bg-sky-950" onClick={() => 
                 {
                     const filteredList = listOfRestaurants.filter((restaurants) => restaurants.info.avgRating > 4);
                     setFilteredRestaurants(filteredList);//updating the state
+                    console.log(filteredRestaurants.length);
                 }}>
-                Top Rated Restaurants
+                Top Rated
             </button>
             <label className="font-bold mx-4">UserName :</label>
             <input className="border-2 border-slate-400 m-4 p-1" type="text" 
@@ -56,7 +75,7 @@ const Body = () => {
        
         <section className="flex flex-wrap">
             {
-                (searchRestaurant.length > 0) ?
+                (filteredRestaurants.length > 0) ?
                 //showing only filtered restaurants
                 filteredRestaurants.map((restaurant) => (
                     <RestaurantCard key={restaurant.info.id} resData={restaurant}/>
