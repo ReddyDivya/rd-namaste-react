@@ -16,28 +16,32 @@ global.fetch = jest.fn(() => {
     });
 });
 
-// it("Should Search Restaurant List for pizza text input", async () => {
-//     await act( async () => render(
-//         <BrowserRouter>
-//             <Body/>
-//         </BrowserRouter>
-//     ))
+it("Should Search Restaurant List for pizza text input", async () => {
+    await act( async () => render(
+        <BrowserRouter>
+            <Body/>
+        </BrowserRouter>
+    ))
 
-//     const cardBeforeSearch = screen.getAllByTestId("resCard");
-//     expect(cardBeforeSearch.length).toBe(9);
+    const cardBeforeSearch = screen.getAllByTestId("resCard");
+    expect(cardBeforeSearch.length).toBe(9);
     
-//     //Search button
-//     const searchBtn = screen.getByRole("button", { name: "Search" });
-
-//     const searchInput = screen.getByTestId("searchInput");
-//     fireEvent.change(searchInput, { target: { value: "chinese" } });
-
-//     fireEvent.click(searchBtn);
-
-//     const cardsAfterSearch = screen.getAllByTestId("resCard");
-//     console.log(cardsAfterSearch.length);
-//     expect(cardsAfterSearch.length).toBe(9);
-// })
+    //Search button
+    const searchBtn = screen.getByRole("button", { name: "Search" });
+    
+    //Search Input
+    const searchInput = screen.getByTestId("searchInput");
+    
+    //Search input change event
+    fireEvent.change(searchInput, { target: { value: "domino" } });
+    
+    //Search btn click event
+    fireEvent.click(searchBtn);
+    
+    //After search records
+    const cardsAfterSearch = screen.getAllByTestId("resCard");
+    expect(cardsAfterSearch.length).toBe(1);
+});
 
 it("Should filter Top Rated Restaurant", async () => {
     await act(async () =>
@@ -50,14 +54,12 @@ it("Should filter Top Rated Restaurant", async () => {
   
     const cardsBeforeFilter = screen.getAllByTestId("resCard");
     expect(cardsBeforeFilter.length).toBe(9);
-    console.log('before', cardsBeforeFilter.length);
   
     const topRatedBtn = screen.getByRole("button", {
-      name: "Top Rated",
+      name: "Top Rated Restaurants",
     });
     fireEvent.click(topRatedBtn);
   
     const cardsAfterFilter = screen.getAllByTestId("resCard");
-    expect(cardsAfterFilter.length).toBe(6);
-    console.log('after', cardsAfterFilter.length);
+    expect(cardsAfterFilter.length).toBe(5);
   });

@@ -28,15 +28,9 @@ const Body = () => {
     return ( 
     <>
         <section>
-            {/* <input data-testid="searchInput" className="border-2 border-slate-400 m-4 p-1" type="text" value={searchRestaurant}
-                onChange={(e) => {
-                    setSearchRestaurant(e.target.value);
-                }}
-            /> */}
-
             <input
-                type="text"
                 data-testid="searchInput"
+                type="text"
                 className="border border-solid border-black"
                 value={searchRestaurant}
                 onChange={(e) => {
@@ -62,7 +56,7 @@ const Body = () => {
                     setFilteredRestaurants(filteredList);//updating the state
                     console.log(filteredRestaurants.length);
                 }}>
-                Top Rated
+                Top Rated Restaurants
             </button>
             <label className="font-bold mx-4">UserName :</label>
             <input className="border-2 border-slate-400 m-4 p-1" type="text" 
