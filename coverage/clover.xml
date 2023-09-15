@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1694756306290" clover="3.2.0">
-  <project timestamp="1694756306291" name="All files">
-    <metrics statements="112" coveredstatements="102" conditionals="26" coveredconditionals="19" methods="45" coveredmethods="36" elements="183" coveredelements="157" complexity="0" loc="112" ncloc="112" packages="3" files="17" classes="17"/>
+<coverage generated="1694764600991" clover="3.2.0">
+  <project timestamp="1694764600992" name="All files">
+    <metrics statements="112" coveredstatements="105" conditionals="26" coveredconditionals="21" methods="45" coveredmethods="39" elements="183" coveredelements="165" complexity="0" loc="112" ncloc="112" packages="3" files="17" classes="17"/>
     <package name="components">
-      <metrics statements="72" coveredstatements="67" conditionals="26" coveredconditionals="19" methods="32" coveredmethods="28"/>
+      <metrics statements="72" coveredstatements="69" conditionals="26" coveredconditionals="21" methods="32" coveredmethods="30"/>
       <file name="Body.jsx" path="D:\Divya\Program\rd-react-projects\namaste-react\src\components\Body.jsx">
         <metrics statements="22" coveredstatements="20" conditionals="8" coveredconditionals="6" methods="9" coveredmethods="8"/>
         <line num="10" count="1" type="stmt"/>
@@ -30,13 +30,13 @@
         <line num="80" count="27" type="stmt"/>
       </file>
       <file name="Cart.jsx" path="D:\Divya\Program\rd-react-projects\namaste-react\src\components\Cart.jsx">
-        <metrics statements="6" coveredstatements="5" conditionals="4" coveredconditionals="2" methods="3" coveredmethods="2"/>
+        <metrics statements="6" coveredstatements="5" conditionals="4" coveredconditionals="4" methods="3" coveredmethods="2"/>
         <line num="8" count="1" type="stmt"/>
-        <line num="9" count="4" type="stmt"/>
-        <line num="10" count="2" type="stmt"/>
-        <line num="13" count="2" type="stmt"/>
+        <line num="9" count="12" type="stmt"/>
+        <line num="10" count="6" type="stmt"/>
+        <line num="13" count="6" type="stmt"/>
         <line num="15" count="0" type="stmt"/>
-        <line num="18" count="2" type="stmt"/>
+        <line num="18" count="6" type="stmt"/>
       </file>
       <file name="Contacts.jsx" path="D:\Divya\Program\rd-react-projects\namaste-react\src\components\Contacts.jsx">
         <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
@@ -46,22 +46,22 @@
       <file name="Header.jsx" path="D:\Divya\Program\rd-react-projects\namaste-react\src\components\Header.jsx">
         <metrics statements="7" coveredstatements="7" conditionals="4" coveredconditionals="2" methods="3" coveredmethods="3"/>
         <line num="9" count="2" type="stmt"/>
-        <line num="10" count="7" type="stmt"/>
-        <line num="11" count="7" type="stmt"/>
-        <line num="14" count="7" type="stmt"/>
-        <line num="17" count="13" type="stmt"/>
-        <line num="19" count="7" type="stmt"/>
+        <line num="10" count="11" type="stmt"/>
+        <line num="11" count="11" type="stmt"/>
+        <line num="14" count="11" type="stmt"/>
+        <line num="17" count="21" type="stmt"/>
+        <line num="19" count="11" type="stmt"/>
         <line num="44" count="1" type="cond" truecount="1" falsecount="1"/>
       </file>
       <file name="ItemList.jsx" path="D:\Divya\Program\rd-react-projects\namaste-react\src\components\ItemList.jsx">
-        <metrics statements="7" coveredstatements="5" conditionals="4" coveredconditionals="3" methods="4" coveredmethods="2"/>
+        <metrics statements="7" coveredstatements="7" conditionals="4" coveredconditionals="3" methods="4" coveredmethods="4"/>
         <line num="6" count="1" type="stmt"/>
-        <line num="7" count="3" type="stmt"/>
-        <line num="10" count="3" type="stmt"/>
-        <line num="11" count="0" type="stmt"/>
-        <line num="14" count="3" type="stmt"/>
-        <line num="17" count="49" type="stmt"/>
-        <line num="39" count="0" type="stmt"/>
+        <line num="7" count="8" type="stmt"/>
+        <line num="10" count="8" type="stmt"/>
+        <line num="11" count="2" type="stmt"/>
+        <line num="14" count="8" type="stmt"/>
+        <line num="17" count="93" type="stmt"/>
+        <line num="39" count="2" type="stmt"/>
       </file>
       <file name="RestaurantCard.jsx" path="D:\Divya\Program\rd-react-projects\namaste-react\src\components\RestaurantCard.jsx">
         <metrics statements="7" coveredstatements="7" conditionals="0" coveredconditionals="0" methods="3" coveredmethods="3"/>
@@ -76,30 +76,30 @@
       <file name="RestaurantCategory.jsx" path="D:\Divya\Program\rd-react-projects\namaste-react\src\components\RestaurantCategory.jsx">
         <metrics statements="5" coveredstatements="5" conditionals="2" coveredconditionals="2" methods="3" coveredmethods="3"/>
         <line num="4" count="1" type="stmt"/>
-        <line num="6" count="57" type="stmt"/>
+        <line num="6" count="95" type="stmt"/>
         <line num="8" count="1" type="stmt"/>
-        <line num="11" count="57" type="stmt"/>
+        <line num="11" count="95" type="stmt"/>
         <line num="13" count="1" type="stmt"/>
       </file>
       <file name="RestaurantMenu.jsx" path="D:\Divya\Program\rd-react-projects\namaste-react\src\components\RestaurantMenu.jsx">
         <metrics statements="12" coveredstatements="12" conditionals="4" coveredconditionals="4" methods="4" coveredmethods="4"/>
         <line num="7" count="1" type="stmt"/>
-        <line num="8" count="5" type="stmt"/>
-        <line num="9" count="5" type="stmt"/>
-        <line num="12" count="5" type="stmt"/>
-        <line num="14" count="5" type="cond" truecount="2" falsecount="0"/>
-        <line num="18" count="3" type="stmt"/>
-        <line num="21" count="3" type="stmt"/>
-        <line num="24" count="3" type="stmt"/>
-        <line num="27" count="69" type="stmt"/>
-        <line num="29" count="3" type="stmt"/>
-        <line num="58" count="57" type="stmt"/>
+        <line num="8" count="9" type="stmt"/>
+        <line num="9" count="9" type="stmt"/>
+        <line num="12" count="9" type="stmt"/>
+        <line num="14" count="9" type="cond" truecount="2" falsecount="0"/>
+        <line num="18" count="5" type="stmt"/>
+        <line num="21" count="5" type="stmt"/>
+        <line num="24" count="5" type="stmt"/>
+        <line num="27" count="115" type="stmt"/>
+        <line num="29" count="5" type="stmt"/>
+        <line num="58" count="95" type="stmt"/>
         <line num="70" count="1" type="stmt"/>
       </file>
       <file name="Shimmer.jsx" path="D:\Divya\Program\rd-react-projects\namaste-react\src\components\Shimmer.jsx">
         <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
         <line num="3" count="2" type="stmt"/>
-        <line num="4" count="4" type="stmt"/>
+        <line num="4" count="6" type="stmt"/>
       </file>
       <file name="sum.js" path="D:\Divya\Program\rd-react-projects\namaste-react\src\components\sum.js">
         <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
@@ -122,13 +122,13 @@
       <file name="useOnlineStatus.js" path="D:\Divya\Program\rd-react-projects\namaste-react\src\utils\useOnlineStatus.js">
         <metrics statements="8" coveredstatements="6" conditionals="0" coveredconditionals="0" methods="4" coveredmethods="2"/>
         <line num="4" count="3" type="stmt"/>
-        <line num="5" count="14" type="stmt"/>
-        <line num="8" count="14" type="stmt"/>
-        <line num="10" count="8" type="stmt"/>
+        <line num="5" count="18" type="stmt"/>
+        <line num="8" count="18" type="stmt"/>
+        <line num="10" count="10" type="stmt"/>
         <line num="11" count="0" type="stmt"/>
-        <line num="15" count="8" type="stmt"/>
+        <line num="15" count="10" type="stmt"/>
         <line num="16" count="0" type="stmt"/>
-        <line num="20" count="14" type="stmt"/>
+        <line num="20" count="18" type="stmt"/>
       </file>
       <file name="useRestaurantList.js" path="D:\Divya\Program\rd-react-projects\namaste-react\src\utils\useRestaurantList.js">
         <metrics statements="12" coveredstatements="12" conditionals="0" coveredconditionals="0" methods="3" coveredmethods="3"/>
@@ -148,27 +148,27 @@
       <file name="useRestaurantMenu.js" path="D:\Divya\Program\rd-react-projects\namaste-react\src\utils\useRestaurantMenu.js">
         <metrics statements="10" coveredstatements="10" conditionals="0" coveredconditionals="0" methods="3" coveredmethods="3"/>
         <line num="5" count="1" type="stmt"/>
-        <line num="6" count="5" type="stmt"/>
-        <line num="9" count="5" type="stmt"/>
-        <line num="10" count="2" type="stmt"/>
-        <line num="14" count="5" type="stmt"/>
-        <line num="15" count="2" type="stmt"/>
-        <line num="16" count="2" type="stmt"/>
-        <line num="17" count="2" type="stmt"/>
-        <line num="19" count="2" type="stmt"/>
-        <line num="22" count="5" type="stmt"/>
+        <line num="6" count="9" type="stmt"/>
+        <line num="9" count="9" type="stmt"/>
+        <line num="10" count="4" type="stmt"/>
+        <line num="14" count="9" type="stmt"/>
+        <line num="15" count="4" type="stmt"/>
+        <line num="16" count="4" type="stmt"/>
+        <line num="17" count="4" type="stmt"/>
+        <line num="19" count="4" type="stmt"/>
+        <line num="22" count="9" type="stmt"/>
       </file>
     </package>
     <package name="utils.redux">
-      <metrics statements="6" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="3" coveredmethods="0"/>
+      <metrics statements="6" coveredstatements="4" conditionals="0" coveredconditionals="0" methods="3" coveredmethods="1"/>
       <file name="appStore.js" path="D:\Divya\Program\rd-react-projects\namaste-react\src\utils\redux\appStore.js">
         <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
         <line num="5" count="2" type="stmt"/>
       </file>
       <file name="cartSlice.js" path="D:\Divya\Program\rd-react-projects\namaste-react\src\utils\redux\cartSlice.js">
-        <metrics statements="5" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="3" coveredmethods="0"/>
+        <metrics statements="5" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="3" coveredmethods="1"/>
         <line num="4" count="2" type="stmt"/>
-        <line num="12" count="0" type="stmt"/>
+        <line num="12" count="2" type="stmt"/>
         <line num="15" count="0" type="stmt"/>
         <line num="24" count="0" type="stmt"/>
         <line num="30" count="2" type="stmt"/>

@@ -59,3 +59,81 @@ it("Should load Restaurant Menu Cart : 0 initially", async () => {
     expect(noCartItems).toBeInTheDocument();
 });
 
+it("Should add one item to cart through first ADD button", async () => {
+    await act(async () => 
+        render(
+            <BrowserRouter>
+                <Provider store={appStore}>
+                    <Header/>
+                    <RestaurantMenu/>
+                    <Cart/>
+                </Provider>
+            </BrowserRouter>
+        )
+    );
+    
+    //add items btn
+    const addBtn = screen.getAllByRole("button", {name : "ADD"});
+    
+    //there are several ADD btn but clicking on first btn
+    fireEvent.click(addBtn[1]);
+
+    const oneCartItem = screen.getByText("Cart : 1");
+    
+    //Assertion
+    expect(oneCartItem).toBeInTheDocument();
+});
+
+it("Should add two items to cart through second ADD button", async () => {
+    await act(async () => 
+        render(
+            <BrowserRouter>
+                <Provider store={appStore}>
+                    <Header/>
+                    <RestaurantMenu/>
+                    <Cart/>
+                </Provider>
+            </BrowserRouter>
+        )
+    );
+    console.log('before', screen.getAllByTestId("foodItems").length);
+
+    //add items btn
+    const addBtn = screen.getAllByRole("button", {name : "ADD"});
+
+    //there are several ADD btn but clicking on second btn
+    fireEvent.click(addBtn[2]);
+
+    const oneCartItem = screen.getByText("Cart : 2");
+    
+    //Assertion
+    expect(oneCartItem).toBeInTheDocument();
+    console.log('after', screen.getAllByTestId("foodItems").length);
+});
+
+
+// it("Should check two added items are in the cart component", async () => {
+//     await act(async () => 
+//         render(
+//             <BrowserRouter>
+//                 <Provider store={appStore}>
+//                     <Header/>
+//                     <RestaurantMenu/>
+//                     <Cart/>
+//                 </Provider>
+//             </BrowserRouter>
+//         )
+//     );
+   
+//     //all foodItems
+//     const allFoodItems = screen.getAllByTestId("foodItems");
+
+//     //assertion
+//     expect(allFoodItems.length).toBe(23);
+
+//     const addBtns = screen.getAllByRole("button", { name: "ADD" });
+//     fireEvent.click(addBtns[1]);
+//     fireEvent.click(addBtns[2]);
+
+//     expect(screen.getAllByTestId("foodItems").length).toBe(25);
+// });
