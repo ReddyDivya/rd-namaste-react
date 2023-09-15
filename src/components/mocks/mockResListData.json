@@ -3,7 +3,7 @@
     "data": {
         "statusMessage": "done successfully",
         "pageOffset": {
-            "nextOffset": "COVCELQ4KIC4/Pyc5N6ubjCnEzgD",
+            "nextOffset": "COVCELQ4KICgkLXNlovIVzCnEzgD",
             "widgetOffset": {
                 "NewListingView_Topical_Fullbleed": "",
                 "NewListingView_Topical_Version2": "",
@@ -1459,10 +1459,10 @@
                                             "avgRatingString": "3.8",
                                             "totalRatingsString": "5K+",
                                             "sla": {
-                                                "deliveryTime": 27,
+                                                "deliveryTime": 29,
                                                 "lastMileTravel": 7.5,
                                                 "serviceability": "SERVICEABLE",
-                                                "slaString": "27 mins",
+                                                "slaString": "29 mins",
                                                 "lastMileTravelString": "7.5 km",
                                                 "iconType": "ICON_TYPE_EMPTY"
                                             },
@@ -1722,10 +1722,10 @@
                                             "avgRatingString": "4.2",
                                             "totalRatingsString": "10K+",
                                             "sla": {
-                                                "deliveryTime": 28,
+                                                "deliveryTime": 26,
                                                 "lastMileTravel": 3.9,
                                                 "serviceability": "SERVICEABLE",
-                                                "slaString": "28 mins",
+                                                "slaString": "26 mins",
                                                 "lastMileTravelString": "3.9 km",
                                                 "iconType": "ICON_TYPE_EMPTY"
                                             },
@@ -2033,10 +2033,10 @@
                                             "avgRatingString": "3.8",
                                             "totalRatingsString": "5K+",
                                             "sla": {
-                                                "deliveryTime": 28,
+                                                "deliveryTime": 29,
                                                 "lastMileTravel": 4.3,
                                                 "serviceability": "SERVICEABLE",
-                                                "slaString": "28 mins",
+                                                "slaString": "29 mins",
                                                 "lastMileTravelString": "4.3 km",
                                                 "iconType": "ICON_TYPE_EMPTY"
                                             },
@@ -2522,10 +2522,10 @@
                                             "avgRatingString": "4.3",
                                             "totalRatingsString": "5K+",
                                             "sla": {
-                                                "deliveryTime": 28,
+                                                "deliveryTime": 27,
                                                 "lastMileTravel": 4.5,
                                                 "serviceability": "SERVICEABLE",
-                                                "slaString": "28 mins",
+                                                "slaString": "27 mins",
                                                 "lastMileTravelString": "4.5 km",
                                                 "iconType": "ICON_TYPE_EMPTY"
                                             },
@@ -3369,21 +3369,6 @@
                                 "subLabel": "Filter by"
                             },
                             {
-                                "label": "Offers",
-                                "id": "restaurantOfferMultiTd",
-                                "selection": "SELECT_TYPE_SINGLESELECT",
-                                "facetInfo": [
-                                    {
-                                        "label": "Offers",
-                                        "id": "restaurantOfferMultiTdfacetquery3",
-                                        "analytics": {},
-                                        "openFilter": true
-                                    }
-                                ],
-                                "viewType": "VIEW_TYPE_FLATTENED",
-                                "subLabel": "Restaurants with"
-                            },
-                            {
                                 "label": "Cost for two",
                                 "id": "costForTwo",
                                 "selection": "SELECT_TYPE_MULTISELECT",
@@ -3504,7 +3489,7 @@
                                             "restaurantOfferPresentationInfo": {}
                                         },
                                         "analytics": {
-                                            "context": "seo-data-aceb3181-b081-40b4-8079-9bfba16dd908"
+                                            "context": "seo-data-7bb9271a-1331-46a8-85b2-28b43346f3c6"
                                         },
                                         "cta": {
                                             "link": "https://www.swiggy.com/restaurants/dominos-pizza-sheetal-shopping-square-athwa-surat-74453",
@@ -3593,7 +3578,7 @@
                                             "restaurantOfferPresentationInfo": {}
                                         },
                                         "analytics": {
-                                            "context": "seo-data-aceb3181-b081-40b4-8079-9bfba16dd908"
+                                            "context": "seo-data-7bb9271a-1331-46a8-85b2-28b43346f3c6"
                                         },
                                         "cta": {
                                             "link": "https://www.swiggy.com/restaurants/mcdonalds-reliance-mall-rustampura-surat-100721",
@@ -3679,7 +3664,7 @@
                                             "restaurantOfferPresentationInfo": {}
                                         },
                                         "analytics": {
-                                            "context": "seo-data-aceb3181-b081-40b4-8079-9bfba16dd908"
+                                            "context": "seo-data-7bb9271a-1331-46a8-85b2-28b43346f3c6"
                                         },
                                         "cta": {
                                             "link": "https://www.swiggy.com/restaurants/burger-king-vip-road-vesu-surat-74644",
@@ -3724,10 +3709,10 @@
                                             "avgRatingString": "3.8",
                                             "totalRatingsString": "5K+",
                                             "sla": {
-                                                "deliveryTime": 27,
+                                                "deliveryTime": 29,
                                                 "lastMileTravel": 7.5,
                                                 "serviceability": "SERVICEABLE",
-                                                "slaString": "27 mins",
+                                                "slaString": "29 mins",
                                                 "lastMileTravelString": "7.5 km",
                                                 "iconType": "ICON_TYPE_EMPTY"
                                             },
@@ -3768,7 +3753,7 @@
                                             "restaurantOfferPresentationInfo": {}
                                         },
                                         "analytics": {
-                                            "context": "seo-data-aceb3181-b081-40b4-8079-9bfba16dd908"
+                                            "context": "seo-data-7bb9271a-1331-46a8-85b2-28b43346f3c6"
                                         },
                                         "cta": {
                                             "link": "https://www.swiggy.com/restaurants/kfc-lp-savani-road-adajan-gam-surat-236083",
@@ -3884,7 +3869,7 @@
                                             "restaurantOfferPresentationInfo": {}
                                         },
                                         "analytics": {
-                                            "context": "seo-data-aceb3181-b081-40b4-8079-9bfba16dd908"
+                                            "context": "seo-data-7bb9271a-1331-46a8-85b2-28b43346f3c6"
                                         },
                                         "cta": {
                                             "link": "https://www.swiggy.com/restaurants/jay-jalaram-thali-kaji-maidan-gopipura-surat-205488",
@@ -3973,7 +3958,7 @@
                                             "restaurantOfferPresentationInfo": {}
                                         },
                                         "analytics": {
-                                            "context": "seo-data-aceb3181-b081-40b4-8079-9bfba16dd908"
+                                            "context": "seo-data-7bb9271a-1331-46a8-85b2-28b43346f3c6"
                                         },
                                         "cta": {
                                             "link": "https://www.swiggy.com/restaurants/center-point-ghandhi-smruti-timaliyawad-nanpura-surat-352546",
@@ -4018,10 +4003,10 @@
                                             "avgRatingString": "4.2",
                                             "totalRatingsString": "10K+",
                                             "sla": {
-                                                "deliveryTime": 28,
+                                                "deliveryTime": 26,
                                                 "lastMileTravel": 3.9,
                                                 "serviceability": "SERVICEABLE",
-                                                "slaString": "28 mins",
+                                                "slaString": "26 mins",
                                                 "lastMileTravelString": "3.9 km",
                                                 "iconType": "ICON_TYPE_EMPTY"
                                             },
@@ -4062,7 +4047,7 @@
                                             "restaurantOfferPresentationInfo": {}
                                         },
                                         "analytics": {
-                                            "context": "seo-data-aceb3181-b081-40b4-8079-9bfba16dd908"
+                                            "context": "seo-data-7bb9271a-1331-46a8-85b2-28b43346f3c6"
                                         },
                                         "cta": {
                                             "link": "https://www.swiggy.com/restaurants/healthy-eatzzz-ghod-dod-road-athwa-surat-87334",
@@ -4150,7 +4135,7 @@
                                             "restaurantOfferPresentationInfo": {}
                                         },
                                         "analytics": {
-                                            "context": "seo-data-aceb3181-b081-40b4-8079-9bfba16dd908"
+                                            "context": "seo-data-7bb9271a-1331-46a8-85b2-28b43346f3c6"
                                         },
                                         "cta": {
                                             "link": "https://www.swiggy.com/restaurants/nareshbhai-v-bhelwala-daliya-street-gopipura-surat-78140",
@@ -4240,7 +4225,7 @@
                                             "restaurantOfferPresentationInfo": {}
                                         },
                                         "analytics": {
-                                            "context": "seo-data-aceb3181-b081-40b4-8079-9bfba16dd908"
+                                            "context": "seo-data-7bb9271a-1331-46a8-85b2-28b43346f3c6"
                                         },
                                         "cta": {
                                             "link": "https://www.swiggy.com/restaurants/la-pinoz-pizza-shanti-nagar-udhna-gam-surat-514729",
@@ -9445,7 +9430,7 @@
                         "lat": "21.1702401",
                         "lng": "72.83106070000001",
                         "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/116.0.0.0 Safari/537.36",
-                        "gandalfRequest": "{\"sortAttribute\":\"relevance\",\"isFiltered\":false,\"queryId\":\"seo-data-aceb3181-b081-40b4-8079-9bfba16dd908\",\"seoParams\":{\"apiName\":\"FoodHomePage\",\"brandId\":\"\",\"seoUrl\":\"www.swiggy.com\",\"pageType\":\"FOOD_HOME_PAGE\"}}",
+                        "gandalfRequest": "{\"sortAttribute\":\"relevance\",\"isFiltered\":false,\"queryId\":\"seo-data-7bb9271a-1331-46a8-85b2-28b43346f3c6\",\"seoParams\":{\"apiName\":\"FoodHomePage\",\"brandId\":\"\",\"seoUrl\":\"www.swiggy.com\",\"pageType\":\"FOOD_HOME_PAGE\"}}",
                         "id": "meta_data",
                         "metaInfo": {
                             "pageType": "FOOD_HOME_PAGE",
@@ -9465,8 +9450,8 @@
         "cacheExpiryTime": 240,
         "nextFetch": 1
     },
-    "tid": "030c61e0-6b61-4e00-bf9d-cf6ba9e67a6d",
-    "sid": "9bs5e077-df45-45ba-ae70-d4eab1ad1fd9",
-    "deviceId": "12f8739a-ef70-7206-9bf0-d9d5f9c13925",
+    "tid": "21412658-6edd-4b6c-8014-750cdeeb3027",
+    "sid": "9bs748f8-0e60-429f-936e-26fad61670b7",
+    "deviceId": "ad6f76d8-d027-d791-8b75-04d509527b9f",
     "csrfToken": null
 }
