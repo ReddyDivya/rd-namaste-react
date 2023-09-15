@@ -3,7 +3,7 @@ import ItemList from "./ItemList";
 import { useSelector, useDispatch } from "react-redux";
 import {clearCart} from "../utils/redux/cartSlice";
 import {Link} from "react-router-dom";
-import receipe from "../components/assets/receipe.jpg";
+// import receipe from "../components/assets/receipe.jpg";
 
 const Cart = () => {
     const cartItems = useSelector((store) => store.cart.items);
@@ -21,7 +21,7 @@ const Cart = () => {
             {
                 cartItems?.length === 0 ? 
                 <>
-                    <img src={receipe} className=""/>
+                    {/* <img src={receipe}/> */}
                     <h1 className="text-center font-bold">Your cart is empty.</h1>
                     <h2 className="text-center">You can go to home page to view more restaurants.</h2>
                 </>
