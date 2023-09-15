@@ -15,7 +15,7 @@ global.fetch = jest.fn(() =>
     })
 );
 
-it("Should load Restaurant Menu Component", async () => {
+it("Should load Restaurant Menu's Beverages (9) when it's clicked", async () => {
     await act(async () => 
         render(
             <BrowserRouter>
@@ -37,5 +37,25 @@ it("Should load Restaurant Menu Component", async () => {
     
     //Assertion
     expect(footItems.length).toBe(9);
-})
+});
+
+it("Should load Restaurant Menu Cart : 0 initially", async () => {
+    await act(async () => 
+        render(
+            <BrowserRouter>
+                <Provider store={appStore}>
+                    <Header/>
+                    <RestaurantMenu/>
+                    <Cart/>
+                </Provider>
+            </BrowserRouter>
+        )
+    );
+    
+    //no cart items
+    const noCartItems = screen.getByText("Cart : 0");
+    
+    //Assertion
+    expect(noCartItems).toBeInTheDocument();
+});
 
