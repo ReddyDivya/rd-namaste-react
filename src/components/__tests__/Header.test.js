@@ -77,7 +77,7 @@ it("Should change Login Button to Logout on click", () => {
     expect(logoutButton).toBeInTheDocument();
 });
 
-it("Should check whether your online or offline", () => {
+it("Should check online", () => {
     render(
         <BrowserRouter>
             <Provider store={appStore}>
@@ -86,12 +86,12 @@ it("Should check whether your online or offline", () => {
         </BrowserRouter>
     )
     
-    const onlineStatus = screen.getByText("🟢");
-    
+    const onlineStatus = screen.getByText("🟢");    
     expect(onlineStatus).toBeInTheDocument();
 });
 
-it("Should show logout button", () => {
+
+it("Should show Logout button when Login button is simulated", () => {
     render(
         <BrowserRouter>
             <Provider store={appStore}>
@@ -101,8 +101,28 @@ it("Should show logout button", () => {
     )
     
     const loginBtn = screen.getByRole("button", {name : "Login"});
-    fireEvent.click(loginBtn); //login btn is clicked
-
-    const logoutBtn = screen.getByRole("button", {name : "Logout"});//logout text
-    expect(logoutBtn).toBeInTheDocument();
+    
+    // Simulate a click event on the login button
+    fireEvent.click(loginBtn);
+    
+    // Assert that the button text has changed to "Logout"
+    expect(loginBtn.textContent).toBe("Logout");
 });
+
+// it("Should show Login button when Logout button is simulated", () => {
+//     render(
+//         <BrowserRouter>
+//             <Provider store={appStore}>
+//                 <Header/>
+//             </Provider>
+//         </BrowserRouter>
+//     )
+    
+//     const logoutBtn = screen.getByRole("button", {name : "Logout"});
+    
+//     // Simulate a click event on the logout button
+//     fireEvent.click(logoutBtn);
+    
+//     // Assert that the button text has changed to "Login"
+//     expect(logoutBtn.textContent).toBe("Login");
+// });
