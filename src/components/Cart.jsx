@@ -22,8 +22,8 @@ const Cart = () => {
                 cartItems?.length === 0 ? 
                 <>
                     {/* <img src={receipe}/> */}
-                    <h1 className="text-center font-bold">Your cart is empty.</h1>
-                    <h2 className="text-center">You can go to home page to view more restaurants.</h2>
+                    <h1 className="text-center font-bold">Your cart is empty. You can go to home page to view more restaurants.</h1>
+                    {/* <h2 className="text-center">You can go to home page to view more restaurants.</h2> */}
                 </>
                 : <ItemList items={cartItems}/>
             }

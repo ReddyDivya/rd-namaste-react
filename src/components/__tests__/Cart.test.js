@@ -96,7 +96,6 @@ it("Should add two items to cart through second ADD button", async () => {
             </BrowserRouter>
         )
     );
-    console.log('before', screen.getAllByTestId("foodItems").length);
 
     //add items btn
     const addBtn = screen.getAllByRole("button", {name : "ADD"});
@@ -108,32 +107,56 @@ it("Should add two items to cart through second ADD button", async () => {
     
     //Assertion
     expect(oneCartItem).toBeInTheDocument();
-    console.log('after', screen.getAllByTestId("foodItems").length);
 });
 
 
-// it("Should check two added items are in the cart component", async () => {
-//     await act(async () => 
-//         render(
-//             <BrowserRouter>
-//                 <Provider store={appStore}>
-//                     <Header/>
-//                     <RestaurantMenu/>
-//                     <Cart/>
-//                 </Provider>
-//             </BrowserRouter>
-//         )
-//     );
+it("Should check two added items are in the cart component", async () => {
+    await act(async () => 
+        render(
+            <BrowserRouter>
+                <Provider store={appStore}>
+                    <Header/>
+                    <RestaurantMenu/>
+                    <Cart/>
+                </Provider>
+            </BrowserRouter>
+        )
+    );
    
-//     //all foodItems
-//     const allFoodItems = screen.getAllByTestId("foodItems");
+    //all foodItems after 2 items added to cart
+    const allFoodItems = screen.getAllByTestId("foodItems");
 
-//     //assertion
-//     expect(allFoodItems.length).toBe(23);
+    //assertion
+    expect(allFoodItems.length).toBe(22);
+});
 
-//     const addBtns = screen.getAllByRole("button", { name: "ADD" });
-//     fireEvent.click(addBtns[1]);
-//     fireEvent.click(addBtns[2]);
+it("Should clear cart", async () => {
+    await act(async () => 
+        render(
+            <BrowserRouter>
+                <Provider store={appStore}>
+                    <Header/>
+                    <RestaurantMenu/>
+                    <Cart/>
+                </Provider>
+            </BrowserRouter>
+        )
+    );
+   
+    //all foodItems removing items added to cart
+    const allFoodItems = screen.getAllByTestId("foodItems");
 
-//     expect(screen.getAllByTestId("foodItems").length).toBe(25);
-// });
+    //clear cart btn
+    const clearCart =  screen.getByRole("button", {name : "Clear Cart"});
+    
+    //clear cart btn click
+    fireEvent.click(clearCart);
+
+    const clearCartText = screen.getByText("Your cart is empty. You can go to home page to view more restaurants.");
+    
+    //checking text
+    expect(clearCartText);
+
+    //assertion - all foodItems after removing cart items
+    expect(screen.getAllByTestId("foodItems").length).toBe(20);
+});
