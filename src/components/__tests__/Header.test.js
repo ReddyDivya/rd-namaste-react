@@ -76,3 +76,33 @@ it("Should change Login Button to Logout on click", () => {
 
     expect(logoutButton).toBeInTheDocument();
 });
+
+it("Should check whether your online or offline", () => {
+    render(
+        <BrowserRouter>
+            <Provider store={appStore}>
+                <Header/>
+            </Provider>
+        </BrowserRouter>
+    )
+    
+    const onlineStatus = screen.getByText("🟢");
+    
+    expect(onlineStatus).toBeInTheDocument();
+});
+
+it("Should show logout button", () => {
+    render(
+        <BrowserRouter>
+            <Provider store={appStore}>
+                <Header/>
+            </Provider>
+        </BrowserRouter>
+    )
+    
+    const loginBtn = screen.getByRole("button", {name : "Login"});
+    fireEvent.click(loginBtn); //login btn is clicked
+
+    const logoutBtn = screen.getByRole("button", {name : "Logout"});//logout text
+    expect(logoutBtn).toBeInTheDocument();
+});
